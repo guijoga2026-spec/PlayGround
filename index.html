@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101524">
+  <link rel="icon" href="data:,">
+  <title>Kickoff — Street Cup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Kickoff home"><span class="brand-mark">K</span><span>KICK<span class="brand-light">OFF</span><small>STREET CUP</small></span></a>
+      <div class="season-tag"><span class="live-dot"></span> SEASON 01 <i></i> EXHIBITION MATCH</div>
+      <button class="sound-button" id="soundButton" aria-label="Toggle sound" title="Toggle sound"><span id="soundIcon">♫</span></button>
+    </header>
+
+    <section class="game-layout" aria-label="Soccer game">
+      <div class="match-column">
+        <div class="match-topline"><div><span class="eyebrow">QUICK MATCH</span><h1>Own the <em>pitch.</em></h1></div><div class="match-status"><span class="status-pip"></span><span id="statusText">READY TO PLAY</span></div></div>
+        <div class="scoreboard">
+          <div class="team-block home"><span class="team-badge blue-badge">✦</span><div><strong>YOUR SIDE</strong><small>BLUE COMETS</small></div></div>
+          <div class="score-center"><span class="score" id="homeScore">0</span><span class="score-dash">:</span><span class="score" id="awayScore">0</span><div class="match-clock" id="clock">02:00</div></div>
+          <div class="team-block away"><div><strong>CPU SIDE</strong><small>RED ROCKETS</small></div><span class="team-badge red-badge">◆</span></div>
+        </div>
+        <div class="pitch-frame">
+          <canvas id="game" width="1000" height="620" aria-label="Top-down soccer match"></canvas>
+          <div class="pitch-vignette"></div>
+          <div class="touch-controls" aria-label="Touch controls"><div class="touch-stick" id="touchStick"><div class="stick-ring"><i class="stick-knob" id="stickKnob"></i></div></div><button class="touch-shoot" id="touchShoot">SHOOT</button></div>
+          <div class="center-tip" id="centerTip"><div class="tip-card"><div class="tip-ball">⚽</div><div class="tip-kicker">THE CROWD IS WAITING</div><h2>Ready for kickoff?</h2><p>Take control, find your space, and put it in the net.</p><button class="play-button" id="playButton"><span>START MATCH</span><b>→</b></button><div class="tip-controls">WASD / ARROWS <span>MOVE</span><i>•</i> SPACE <span>SHOOT</span></div></div></div>
+          <div class="goal-flash" id="goalFlash"><span>GOAL!</span></div>
+          <div class="paused-overlay hidden" id="pausedOverlay"><span>Ⅱ</span><strong>PAUSED</strong><small>Press P to get back in the game</small></div>
+        </div>
+        <div class="match-footer"><div class="footer-note"><span class="keyboard-icon">⌨</span><span>TIP: <b>Hold SPACE</b> to power up your shot</span></div><div class="match-controls"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> MOVE</span><span><kbd>SPACE</kbd> SHOOT</span><span><kbd>P</kbd> PAUSE</span></div></div>
+      </div>
+      <aside class="side-panel">
+        <div class="panel-heading"><div><span class="eyebrow">MATCH DAY</span><h2>Game plan</h2></div><span class="trophy">✦</span></div>
+        <div class="objective-card"><div class="objective-icon">◎</div><div><small>YOUR OBJECTIVE</small><strong>Score more goals</strong><span>90 seconds on the clock</span></div></div>
+        <div class="divider"></div>
+        <div class="section-label">HOW TO PLAY <span>01 — 03</span></div>
+        <div class="instruction"><span class="instruction-icon move-icon">↗</span><div><strong>Move around</strong><p>Use WASD or arrow keys to run.</p></div></div>
+        <div class="instruction"><span class="instruction-icon shoot-icon">↗</span><div><strong>Take your shot</strong><p>Hold SPACE to charge, release to fire.</p></div></div>
+        <div class="instruction"><span class="instruction-icon tackle-icon">✦</span><div><strong>Win it back</strong><p>Get close to the ball to take possession.</p></div></div>
+        <div class="power-meter-wrap"><div class="power-label"><span>SHOT POWER</span><span id="powerText">READY</span></div><div class="power-track"><div class="power-fill" id="powerFill"></div></div></div>
+        <div class="side-bottom"><span class="pulse-ring"></span><span id="gameHint">Your kickoff. Make it count.</span></div>
+      </aside>
+    </section>
+    <footer class="page-footer"><span>© KICKOFF STREET CUP</span><span>PLAY BOLD. PLAY FAIR.</span><span>BUILT FOR THE LOVE OF THE GAME <b>♥</b></span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
